@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: crij-mayotte
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: /opt/render/project/src/crij.json
